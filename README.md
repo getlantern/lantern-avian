@@ -37,11 +37,7 @@ On Mac
   https://bitbucket.org/alexkasko/openjdk-unofficial-builds/downloads/openjdk-1.7.0-u40-unofficial-macosx-x86_64-image.zip
 - Corresponding source is here: http://www.java.net/download/openjdk/jdk7u40/promoted/b43/openjdk-7u40-fcs-src-b43-26_aug_2013.zip
 - In jdk/src/solaris/native/java/net/net_util_md.c, change lines 117 and 119 to say `CHECK_NULL_RETURN(c, NULL)` instead of `CHECK_NULL(c)`
-
-```
-cp /opt/openjdk7-source//jdk/src/share/javavm/export/jni.h src/
-cp /opt/openjdk7-source//jdk/src/macosx/javavm/export/jni_md.h src
-```
+- At the moment, the jdk and the source downloads are expected to be kept at `/opt/openjdk7-image` and `/opt/openjdk7-source`
 
 ## Usage
 
