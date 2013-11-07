@@ -43,3 +43,5 @@ On Mac
 
 Add a new target to `makefile`.  You can pattern this after the target
 LittleProxy.
+
+`make <target_name>`
