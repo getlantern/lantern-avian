@@ -7,6 +7,9 @@ executables of Lantern and related projects, using a combination of
 [Avian](https://github.com/ReadyTalk/avian), [OpenJDK](http://openjdk.java.net/)
 and [ProGuard](http://proguard.sourceforge.net/).
 
+The build file used by lantern-avian is based on the one provided by
+[avian-swt-examples](https://github.com/ReadyTalk/avian-swt-examples).
+
 ## Prerequisites
 
 ### lantern-avian
