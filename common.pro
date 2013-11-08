@@ -115,3 +115,7 @@
 -keepclassmembers class org.lantern.** {
     *;
 }
+
+-keep class sun.util.calendar.** {
+    *;
+}

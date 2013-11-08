@@ -1,5 +1,5 @@
 # Always use LZMA compression (comment to disable)
-lzma          = lzma-920
+lzma          = ../lantern-avian/lzma-920
 export lzma
 
 # Change platform to appropriate platform based on what's listed in
@@ -17,15 +17,23 @@ JAVA_HOME     = $(openjdk)
 export JAVA_HOME
 
 .PHONY: build
-build: LittleProxy
+build: Lantern
 
+.PHONY: Lantern
+Lantern:
+	make -f app.mk \
+		name="Lantern" \
+		extra-proguard-flags="-include ../Lantern/Lantern.pro" \
+		shaded-jar="../Lantern/target/lantern-1.0.0-beta8-SNAPSHOT.jar" \
+		main-class="org.lantern.Launcher"
+		
 .PHONY: LittleProxy
 LittleProxy:
 	make -f app.mk \
 		name="LittleProxy" \
 		extra-proguard-flags="-include ../LittleProxy/LittleProxy.pro" \
 		shaded-jar="../LittleProxy/target/littleproxy-1.0.0-beta4-SNAPSHOT-littleproxy-shade.jar" \
-		main-class="org.littleshoot.proxy.Launcher"
+		main-class="org.littleshoot.proxy.Launcher"		
 
 .PHONY: clean
 clean:

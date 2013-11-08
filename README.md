@@ -12,22 +12,18 @@ The build file used by lantern-avian is based on the one provided by
 
 ## Prerequisites
 
+Note - all projects should be checked out to the same base folder
+
 ### lantern-avian
 
-```
-mkdir work
-cd work
-git clone https://github.com/getlantern/lantern-avian.git
-``` 
+`git clone https://github.com/getlantern/lantern-avian.git`
 
-### Avian
+### Avian (Lantern Fork)
 
-```
-cd work
-git clone https://github.com/ReadyTalk/avian.git
-cd avian
-git checkout "v0.7.1"
-```
+We're using a fork right now to work around a bug in the Avian makefile.
+The fix has been pull requested to Avian.
+
+`git clone https://github.com/getlantern/avian.git`
 
 ### UPX (on Ubuntu)
 
