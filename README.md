@@ -45,7 +45,7 @@ The Mac OS X build uses the
   and put it at `/opt/openjdk7-image`
 - Download the corresponding source from [here](http://www.java.net/download/openjdk/jdk7u40/promoted/b43/openjdk-7u40-fcs-src-b43-26_aug_2013.zip)
   and put it at `/opt/openjdk7-source`
-- In jdk/src/solaris/native/java/net/net_util_md.c, change lines 117 and 119 to say `CHECK_NULL_RETURN(c, NULL)` instead of `CHECK_NULL(c)`
+- In `/opt/openjdk7-source/jdk/src/solaris/native/java/net/net_util_md.c`, change lines 117 and 119 to say `CHECK_NULL_RETURN(c, NULL)` instead of `CHECK_NULL(c)`
 
 ## Usage
 
