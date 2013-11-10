@@ -48,7 +48,15 @@ The Mac OS X build uses the
 Add a new target to `makefile`.  You can pattern this after the target
 LittleProxy.
 
-`make <target_name>`
+`make full-platform=<platform> <target_name>`
+
+<platform> is one of:
+
+| platform               |
+|:---------------------- |
+| linux-x86_64           |
+| darwin-x86_64-cocoa    |
+| windows-i386           |
 
 For a debug build:
 
