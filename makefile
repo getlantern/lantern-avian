@@ -2,14 +2,30 @@
 lzma          = ../lantern-avian/lzma-920
 export lzma
 
-# Change platform to appropriate platform based on what's listed in
-# https://github.com/ReadyTalk/avian-swt-examples/blob/master/README.md
-full-platform = darwin-x86_64-cocoa
-export full-platform
+ifndef full-platform
+    $(error full-platform is undefined, select an appropriate value from the list in https://github.com/ReadyTalk/avian-swt-examples/blob/master/README.md)
+endif
 
-# Always use openjdk, adjust paths as necessary on your system
-openjdk       = "/opt/openjdk7-image/"
-openjdk-src   = "/opt/openjdk7-source/jdk/src/"
+# Always use openjdk, use sensible default paths based on platform
+ifeq ($(openjdk),)
+    ifeq ($(full-platform), darwin-x86_64-cocoa)
+		openjdk       = "/opt/openjdk7-image/"
+	endif
+	ifeq ($(full-platform), linux-x86_64)
+		openjdk       = "/usr/lib/jvm/java-7-openjdk-amd64/"
+	endif
+endif
+
+ifeq ($(openjdk-src),)
+    ifeq ($(full-platform), darwin-x86_64-cocoa)
+		openjdk-src   = "/opt/openjdk7-source/jdk/src"
+	endif
+	ifeq ($(full-platform), linux-x86_64)
+		openjdk-src   = "/usr/lib/jvm/java-7-openjdk-amd64-source/build/openjdk/jdk/src"
+	endif
+endif
+
+export full-platform
 export openjdk
 export openjdk-src
 
@@ -23,8 +39,8 @@ build: Lantern
 Lantern:
 	make -f app.mk \
 		name="Lantern" \
-		extra-proguard-flags="-include ../Lantern/Lantern.pro" \
-		shaded-jar="../Lantern/target/lantern-1.0.0-beta8-SNAPSHOT.jar" \
+		extra-proguard-flags="-include ../lantern/Lantern.pro" \
+		shaded-jar="../lantern/target/lantern-1.0.0-beta8-SNAPSHOT.jar" \
 		main-class="org.lantern.Launcher"
 		
 .PHONY: LittleProxy

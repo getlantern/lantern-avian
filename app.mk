@@ -358,7 +358,7 @@ $(bld)/boot.jar: \
 		$(classes) $(properties) $(data) $(jars) $(vm-classes)
 	@mkdir -p $(dir $(bld)/tmp)
 ifdef proguard
-	$(java) -Xss4m -jar $(proguard) \
+	$(java) -Xss4m -Xms2048m -jar $(proguard) \
 	    -injars $(stage1) \
 		-outjars $(stage2) \
 		-printmapping $(bld)/mapping.txt \

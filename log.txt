@@ -1,3 +1,0 @@
-Running LittleProxy with args: []
-Starting proxy at address: 0.0.0.0/0.0.0.0:8080
-Proxy listening with TCP transport

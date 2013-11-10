@@ -119,3 +119,27 @@
 -keep class sun.util.calendar.** {
     *;
 }
+
+-keep class org.bouncycastle.** {
+    *;
+}
+
+-keep class sun.security.** {
+    *;
+}
+
+-keep class java.security.** {
+    *;
+}
+
+-keep class javax.security.** {
+    *;
+}
+
+-keep class javax.crypto.** {
+    *;
+}
+
+-keep class com.sun.crypto.** {
+    *;
+}

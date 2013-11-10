@@ -50,6 +50,10 @@ LittleProxy.
 
 `make <target_name>`
 
+For a debug build:
+
+`make mode=debug <target_name>`
+
 Note - the builds use project-specific ProGuard configurations like
 `LittleProxy.pro`.  These configurations may be auto-generated as a result of
 running the project's tests, in which case you'll want to make sure to run the
