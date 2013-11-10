@@ -6,6 +6,10 @@
     <methods>;
 }
 
+-keep class com.sun.org.apache.xml.** {
+    *;
+}
+
 -keep class java.lang.* {
     <init>
     <fields>;
