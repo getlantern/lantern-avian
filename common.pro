@@ -1,5 +1,7 @@
 # Common ProGuard settings for Lantern and related projects
 
+-keepdirectories
+
 -keep class com.sun.org.apache.xerces** {
     <init>
     <fields>;
