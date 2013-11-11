@@ -39,7 +39,7 @@ build: Lantern
 Lantern:
 	make -f app.mk \
 		name="Lantern" \
-		extra-proguard-flags="-include ../lantern/Lantern.pro" \
+		extra-proguard-flags="-include ../lantern/Lantern.pro.$(full-platform)" \
 		shaded-jar="../lantern/target/lantern-1.0.0-beta8-SNAPSHOT.jar" \
 		main-class="org.lantern.Launcher"
 		

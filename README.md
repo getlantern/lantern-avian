@@ -43,6 +43,20 @@ The Mac OS X build uses the
   and put it at `/opt/openjdk7-source`
 - In `/opt/openjdk7-source/jdk/src/solaris/native/java/net/net_util_md.c`, change lines 117 and 119 to say `CHECK_NULL_RETURN(c, NULL)` instead of `CHECK_NULL(c)`
 
+#### On Ubuntu
+
+```
+sudo apt-get install openjdk-7-jdk
+sudo apt-get source openjdk-7-jdk
+sudo apt-get build-dep openjdk-7-jdk
+(cd openjdk-7-7u25-2.3.10 && dpkg-buildpackage)
+make openjdk=/usr/lib/jvm/java-7-openjdk \
+     openjdk-src=$(pwd)/openjdk-7-7~b147-2.0/build/openjdk/jdk/src \
+     test
+cd ..
+sudo mv openjdk-7-7u25-2.3.10 /usr/lib/jvm/java-7-openjdk-amd64-source/build/openjdk/jdk/src
+```
+
 ## Usage
 
 Add a new target to `makefile`.  You can pattern this after the target
