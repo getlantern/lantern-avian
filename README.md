@@ -31,6 +31,18 @@ The fix has been pull requested to Avian.
 
 ### OpenJDK 7
 
+#### On Windows
+
+1. Set up Cygwin as described by the
+   [avian README](https://github.com/ReadyTalk/avian).
+   
+2. Install openjdk7 update 45
+   [installer](https://bitbucket.org/alexkasko/openjdk-unofficial-builds/downloads/openjdk-1.7.0-u40-unofficial-windows-i586-installer.zip)
+   and [source](https://github.com/alexkasko/openjdk-icedtea7/archive/jdk7u45_2.4.3.tar.gz)
+   from [Alex Kasko's Unofficial Builds](https://github.com/alexkasko/openjdk-unofficial-builds).
+   
+3. Install openjdk7 to c:\opt\openjdk7-image and the soruce to c:\opt\openjdk7-source
+
 #### On OS X
 
 The Mac OS X build uses the

@@ -8,6 +8,9 @@ endif
 
 # Always use openjdk, use sensible default paths based on platform
 ifeq ($(openjdk),)
+	ifeq ($(full-platform), windows-i386)
+		openjdk	      = "/cygdrive/c/opt/openjdk7-image"
+    endif
     ifeq ($(full-platform), darwin-x86_64-cocoa)
 		openjdk       = "/opt/openjdk7-image/"
 	endif
@@ -17,6 +20,9 @@ ifeq ($(openjdk),)
 endif
 
 ifeq ($(openjdk-src),)
+	ifeq ($(full-platform), windows-i386)
+	    openjdk-src   = "/cygdrive/c/opt/openjdk7-source/jdk/src"
+	endif
     ifeq ($(full-platform), darwin-x86_64-cocoa)
 		openjdk-src   = "/opt/openjdk7-source/jdk/src"
 	endif
